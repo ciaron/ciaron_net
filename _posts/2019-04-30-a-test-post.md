@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: A Test Post
 categories: test web stuff
 ---
