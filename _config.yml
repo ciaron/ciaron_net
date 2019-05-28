@@ -30,6 +30,18 @@ theme: minima
 plugins:
   - jekyll-feed
 
+collections_dir: galleries
+
+collections:
+    gallery_1:
+        title: My Gallery 1
+        type: gallery
+        output: true
+    gallery_2:
+        title: My Gallery 2
+        type: gallery
+        output: true
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

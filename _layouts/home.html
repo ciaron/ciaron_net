@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {% assign galleries = site.collections | where: "type", "gallery" %}
+  {% assign galleries = site.collections | where_exp: "galleries", "galleries.label contains 'gallery_'"  %}
+
+  {% for gallery in galleries %}
+
+  {% assign name = gallery.label %} 
+  <h1>{{ name }}</h1>
+    <h2> * {{ gallery.title }} </h2>
+
+    {% for image in site[name] %}
+        <h3> {{ image.title }}  </h3>
+        <a href="{{image.url}}" >{{image.title}} - {{ image.image }} - {{ gallery.directory }}</a>
+        <img src="{{gallery.label}}/{{image.image}}" />
+    {% endfor %}
+  {% endfor %}
+
+</div>
